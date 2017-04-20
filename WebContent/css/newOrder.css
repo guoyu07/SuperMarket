@@ -1,0 +1,17 @@
+.itemID{
+    color: #00aeef;
+    height: 40px;
+    width: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.itemQty{
+    color: #1ABB9C;
+    height: 40px;
+    width: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}

@@ -1,0 +1,1 @@
+package lib;public class Category {	 private String cateID;     private String cateName;          public Category(String cateID,String cateName){    	 super();    	 this.cateID=cateID;    	 this.cateName=cateName;     }          public String getID(){    	 return this.cateID;     }          public String getName(){    	 return this.cateName;     }}

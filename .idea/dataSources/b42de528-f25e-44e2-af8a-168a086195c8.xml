@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="supermarket@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="supermarket">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="giit"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="Category"/>
+    <table id="9" parent="2" name="Item"/>
+    <table id="10" parent="2" name="Payment_Method"/>
+    <table id="11" parent="2" name="Sales_Item"/>
+    <table id="12" parent="2" name="Sales_Memo"/>
+    <table id="13" parent="2" name="Staff"/>
+    <column id="14" parent="8" name="Category_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="8" name="Category_Name">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <key id="16" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Category_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="17" parent="9" name="Item_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="9" name="Item_Name">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <column id="19" parent="9" name="Category_ID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="20" parent="9" name="Selling_Price">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="21" parent="9" name="Inventory_Qty">
+      <Position>5</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="22" parent="9" name="Location">
+      <Position>6</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <index id="23" parent="9" name="fk_Category_ID_idx">
+      <ColNames>Category_ID</ColNames>
+    </index>
+    <key id="24" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Item_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="9" name="fk_Category_ID">
+      <ColNames>Category_ID</ColNames>
+      <RefSchemaName>supermarket</RefSchemaName>
+      <RefTableName>Category</RefTableName>
+      <RefColNames>Category_ID</RefColNames>
+    </foreign-key>
+    <column id="26" parent="10" name="PaymentMethod_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="10" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <key id="28" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PaymentMethod_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="11" name="SalesMemo_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="11" name="Item_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="11" name="Price">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="32" parent="11" name="Quantity">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <index id="33" parent="11" name="fk_Item_ID_idx">
+      <ColNames>Item_ID</ColNames>
+    </index>
+    <key id="34" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SalesMemo_ID
+Item_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="11" name="fk_SalesMemo_ID">
+      <ColNames>SalesMemo_ID</ColNames>
+      <RefSchemaName>supermarket</RefSchemaName>
+      <RefTableName>Sales_Memo</RefTableName>
+      <RefColNames>SalesMemo_ID</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="36" parent="11" name="fk_Item_ID">
+      <ColNames>Item_ID</ColNames>
+      <RefSchemaName>supermarket</RefSchemaName>
+      <RefTableName>Item</RefTableName>
+      <RefColNames>Item_ID</RefColNames>
+    </foreign-key>
+    <column id="37" parent="12" name="SalesMemo_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="12" name="Store_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="39" parent="12" name="Date">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="40" parent="12" name="PaymentMethod_ID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="41" parent="12" name="Total_Amount">
+      <Position>5</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="42" parent="12" name="Staff_ID">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="43" parent="12" name="fk_PaymentMethod_ID_idx">
+      <ColNames>PaymentMethod_ID</ColNames>
+    </index>
+    <index id="44" parent="12" name="fk_Staff_ID_idx">
+      <ColNames>Staff_ID</ColNames>
+    </index>
+    <key id="45" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SalesMemo_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="12" name="fk_PaymentMethod_ID">
+      <ColNames>PaymentMethod_ID</ColNames>
+      <RefSchemaName>supermarket</RefSchemaName>
+      <RefTableName>Payment_Method</RefTableName>
+      <RefColNames>PaymentMethod_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="47" parent="12" name="fk_Staff_ID">
+      <ColNames>Staff_ID</ColNames>
+      <RefSchemaName>supermarket</RefSchemaName>
+      <RefTableName>Staff</RefTableName>
+      <RefColNames>Staff_ID</RefColNames>
+    </foreign-key>
+    <column id="48" parent="13" name="Staff_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="13" name="Password">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <column id="50" parent="13" name="Staff_Name">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <column id="51" parent="13" name="Store_ID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="52" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Staff_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
